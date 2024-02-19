@@ -2,7 +2,7 @@
 
 Bring the classic fodder of fantasy adventure to your world with Living Slimes! From simple grass slimes to fire-belching lava slimes and everything in between, these living slimes can be found high and low throughout the world. Some are content to roam and forage while others are hostile hunters.
 
-This mod is substantially based on [The Mana World slimes mod](https://github.com/mt-historical/tmw_slimes) by Piezo_ which was inspired by [The Mana World](themanaworld.org).
+This mod is substantially based on [The Mana World slimes mod](https://github.com/mt-historical/tmw_slimes) by Piezo_ which was inspired by [The Mana World](https://themanaworld.org/).
 
 ## Slimes
 
