@@ -1,4 +1,4 @@
-livingslimes.register_slime("Icy",{
+livingslimes.register_slime("Ice",{
   -- Mob Properties
   color = "#8BF:180",
   size = 5,
@@ -46,7 +46,7 @@ livingslimes.register_slime("Icy",{
   spawn_nodes = {
     "group:soil",
     "group:snowy",
-    "group:ice:",
+    "group:ice",
   },
   min_height = 0,
   max_height = 31000,

@@ -12,7 +12,7 @@ The following slimes can be found in various environments throughout the world:
 - **Savanna Slime** - Found in savannas and dry plains; eats dry grass
 - **Poisonous Slime** - Found in swamps and jungles; oozes poison and is harmful to the touch
 - **Algae Slime** - Found in swamps and wetlands; docile attitude and loves to eat mushrooms
-- **Icy Slime** - Found in icy and snowy biomes; subsists on ice and snow
+- **Ice Slime** - Found in icy and snowy biomes; subsists on ice and snow
 - **Ocean Slime** - Found in bodies of water; small, gentle, and quick
 - **Lava Slime** - Found in lava pools; very aggressive and spreads fire when provoked, also burns when touched
 - **Mineral Slime** - Found underground; a sturdy slime that eats stones and rare minerals
