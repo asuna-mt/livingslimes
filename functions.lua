@@ -205,12 +205,12 @@ function livingslimes.register_slime(name,def)
 		sounds = {
 			move = {
 				name = "livingslimes_move",
-				gain = 1.1,
+				gain = 2.75,
 				distance = 40,
 			},
 			slurp = {
 				name = "livingslimes_slurp",
-				gain = 1,
+				gain = 2.75,
 				distance = 40,
 			},
 			attack = {
@@ -240,7 +240,7 @@ function livingslimes.register_slime(name,def)
 			},
 			digest = {
 				name = "livingslimes_digest",
-				gain = 1,
+				gain = 2.75,
 				distance = 40,
 			},
 		},
