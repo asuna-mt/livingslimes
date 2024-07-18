@@ -24,8 +24,8 @@ livingslimes.register_slime("Dark",{
   },
 
   -- Spawning properties
-  spawn_chance = 7500,
-  spawn_cap = 3,
+  spawn_chance = livingslimes.settings.spawn_chance_hostile,
+  spawn_cap = 1,
   spawn_biomes = nil,
   spawn_nodes = {
     "group:soil",

@@ -11,6 +11,8 @@ livingslimes = {
     digest_timer = tonumber(minetest.settings:get("livingslimes.digest_timer",240) or 240),
     allow_poison = minetest.settings:get_bool("livingslimes.allow_poison",true),
     allow_fire = minetest.settings:get_bool("livingslimes.allow_fire",true),
+    spawn_chance_docile = tonumber(minetest.settings:get("livingslimes.spawn_chance_docile",8000) or 8000),
+    spawn_chance_hostile = tonumber(minetest.settings:get("livingslimes.spawn_chance_hostile",12500) or 12500),
   },
   dependencies = (function()
     local deps = {}

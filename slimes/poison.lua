@@ -27,8 +27,8 @@ livingslimes.register_slime("Poison",{
   },
 
   -- Spawning properties
-  spawn_chance = 7500,
-  spawn_cap = 2,
+  spawn_chance = livingslimes.settings.spawn_chance_hostile,
+  spawn_cap = 1,
   spawn_biomes = {
     "rainforest",
     "rainforest_swamp",
@@ -40,8 +40,12 @@ livingslimes.register_slime("Poison",{
     "jumble",
     "livingjungle",
     "livingjungle:livingjungle",
+    "alderswamp",
+    "naturalbiomes:alderswamp",
     "everness_cursed_lands",
+    "everness:cursed_lands",
     "everness_coral_forest",
+    "everness:coral_forest",
     "MushroomIsland",
     "Jungle",
     "JungleM",
@@ -58,7 +62,7 @@ livingslimes.register_slime("Poison",{
   min_light = 0,
   max_light = 16,
   min_group = 1,
-  max_group = 2,
+  max_group = 1,
 
   -- Drops properties
   edible = -5,
