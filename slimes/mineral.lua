@@ -40,7 +40,7 @@ livingslimes.register_slime("Mineral",{
   },
 
   -- Spawning properties
-  spawn_chance = 5000,
+  spawn_chance = livingslimes.settings.spawn_chance_docile,
   spawn_cap = 2,
   spawn_nodes = {
     "group:stone",
@@ -51,7 +51,7 @@ livingslimes.register_slime("Mineral",{
   min_light = 0,
   max_light = 9,
   min_group = 1,
-  max_group = 2,
+  max_group = 1,
 
   -- Drops properties
   edible = 2,

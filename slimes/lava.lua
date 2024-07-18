@@ -28,8 +28,8 @@ livingslimes.register_slime("Lava",{
   },
 
   -- Spawning properties
-  spawn_chance = 125,
-  spawn_cap = 2,
+  spawn_chance = math.floor(livingslimes.settings.spawn_chance_hostile / 10), -- lava is typically more rare so spawn chance is higher
+  spawn_cap = 3,
   spawn_nodes = {
     "group:lava",
   },

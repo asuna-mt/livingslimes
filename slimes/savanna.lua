@@ -26,8 +26,8 @@ livingslimes.register_slime("Savanna",{
   },
 
   -- Spawning properties
-  spawn_chance = 5000,
-  spawn_cap = 2,
+  spawn_chance = livingslimes.settings.spawn_chance_hostile,
+  spawn_cap = 1,
   spawn_biomes = {
     "savanna",
     "naturalbiomes:wetsavanna",
@@ -36,6 +36,7 @@ livingslimes.register_slime("Savanna",{
     "naturalbiomes:outback",
     "mesa",
     "everness_baobab_savanna",
+    "everness:baobab_savanna",
     "Savanna",
     "SavannaM",
   },
@@ -47,7 +48,7 @@ livingslimes.register_slime("Savanna",{
   min_light = 0,
   max_light = 16,
   min_group = 1,
-  max_group = 3,
+  max_group = 1,
 
   -- Drops properties
   edible = 2,

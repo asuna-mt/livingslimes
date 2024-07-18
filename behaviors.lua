@@ -163,7 +163,7 @@ end
 
 -- wander: slime wanders the area aimlessly
 creatura.register_utility("livingslimes:wander", function(self)
-	local move_chance = self.move_chance or 4
+	local move_chance = self.move_chance or 3
 	local center = self.object:get_pos()
 	if not center then return end
 	local move = self.wander_action or creatura.action_move
@@ -172,7 +172,7 @@ creatura.register_utility("livingslimes:wander", function(self)
 			local pos2 = _self:get_wander_pos(2, 3)
 			if math.random(move_chance) == 1
 			and vector.distance(pos2, center) < _self.tracking_range * 0.5 then
-				move(_self, pos2, 2, "creatura:obstacle_avoidance", 0.5, "move")
+				move(_self, pos2, 2, "creatura:obstacle_avoidance", 0.35, "move")
 			else
 				creatura.action_idle(_self, math.random(2,5), "idle")
 			end
@@ -357,7 +357,7 @@ creatura.register_utility("livingslimes:eat", function(self, target)
 			item.object:remove()
 			_self.nearby_food = nil
 		else
-			livingslimes.action_forage(_self, target, "creatura:obstacle_avoidance", 0.75)
+			livingslimes.action_forage(_self, target, "creatura:obstacle_avoidance", 0.5)
 		end
 	end
 	self:set_utility(func)
@@ -391,7 +391,7 @@ creatura.register_utility("livingslimes:dig", function(self, node)
 			end
 			_self.nearby_node = nil
 		else
-			livingslimes.action_dig(_self, node, "creatura:obstacle_avoidance", 0.75)
+			livingslimes.action_dig(_self, node, "creatura:obstacle_avoidance", 0.5)
 		end
 	end
 	self:set_utility(func)

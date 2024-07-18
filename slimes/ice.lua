@@ -25,8 +25,8 @@ livingslimes.register_slime("Ice",{
   },
 
   -- Spawning properties
-  spawn_chance = 5000,
-  spawn_cap = 2,
+  spawn_chance = livingslimes.settings.spawn_chance_hostile,
+  spawn_cap = 1,
   spawn_biomes = {
     "tundra",
     "tundra_highland",
@@ -34,7 +34,8 @@ livingslimes.register_slime("Ice",{
     "coniferous_forest",
     "frost_land",
     "glacier",
-    "frosted_icesheet",
+    "everness_frosted_icesheet",
+    "everness:frosted_icesheet",
     "icesheet",
     "snowy_grassland",
     "frost",
@@ -53,7 +54,7 @@ livingslimes.register_slime("Ice",{
   min_light = 0,
   max_light = 16,
   min_group = 1,
-  max_group = 3,
+  max_group = 1,
 
   -- Drops properties
   edible = 2,
