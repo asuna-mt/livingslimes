@@ -53,6 +53,12 @@ livingslimes = {
   end)(),
 }
 
+-- Do not spawn slimes in Asuna if slimes are disabled
+if not minetest.settings:get_bool("asuna.mobs.slimes",true) then
+  livingslimes.settings.spawn_chance_docile = -1
+  livingslimes.settings.spawn_chance_hostile = -1
+end
+
 -- Get mod path
 local mpath = minetest.get_modpath("livingslimes")
 
