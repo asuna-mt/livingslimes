@@ -2,6 +2,7 @@
 livingslimes = {
   storage = minetest.get_mod_storage(),
   settings = {
+    allow_attack = minetest.settings:get_bool("livingslimes.allow_attack",true) and minetest.settings:get_bool("enable_damage",true),
     allow_eat = minetest.settings:get_bool("livingslimes.allow_eat",true),
     allow_dig = minetest.settings:get_bool("livingslimes.allow_dig",true),
     dig_limit = tonumber(minetest.settings:get("livingslimes.dig_limit",8) or 8),
@@ -11,8 +12,8 @@ livingslimes = {
     digest_timer = tonumber(minetest.settings:get("livingslimes.digest_timer",240) or 240),
     allow_poison = minetest.settings:get_bool("livingslimes.allow_poison",true),
     allow_fire = minetest.settings:get_bool("livingslimes.allow_fire",true),
-    spawn_chance_docile = tonumber(minetest.settings:get("livingslimes.spawn_chance_docile",8000) or 8000),
-    spawn_chance_hostile = tonumber(minetest.settings:get("livingslimes.spawn_chance_hostile",12500) or 12500),
+    spawn_chance_docile = tonumber(minetest.settings:get("livingslimes.spawn_chance_docile",8500) or 8500),
+    spawn_chance_hostile = tonumber(minetest.settings:get("livingslimes.spawn_chance_hostile",12750) or 12750),
   },
   dependencies = (function()
     local deps = {}

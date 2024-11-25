@@ -540,7 +540,7 @@ livingslimes.behaviors = {
 			local target = creatura.get_nearby_player(self,self.tracking_range)
 			return target and 0.4 or 0, {self,target}
 		end,
-		enabled = true,
+		enabled = livingslimes.settings.allow_attack,
 	},
 	neutral = {
 		utility = "livingslimes:neutral",
@@ -549,7 +549,7 @@ livingslimes.behaviors = {
 			local target = creatura.get_nearby_player(self,self.tracking_range)
 			return target and target:is_player() and self.enemies[target:get_player_name() or ""] and 0.4 or 0, {self,target}
 		end,
-		enabled = true,
+		enabled = livingslimes.settings.allow_attack,
 	},
 	poison = {
 		utility = "livingslimes:poison",
@@ -558,7 +558,7 @@ livingslimes.behaviors = {
 			local target = creatura.get_nearby_player(self,self.tracking_range)
 			return target and 0.4 or 0, {self,target}
 		end,
-		enabled = minetest.settings:get_bool("livingslimes.allow_poison",true),
+		enabled = livingslimes.settings.allow_attack and livingslimes.settings.allow_poison,
 		alternative = "attack",
 	},
 	fire = {
@@ -566,7 +566,7 @@ livingslimes.behaviors = {
 		get_score = function(self)
 			return (self.charging == "fire" or (math.random(1,10) == 1 and self:get_utility() == "livingslimes:attack")) and 0.5 or 0, {self}
 		end,
-		enabled = livingslimes.fire and livingslimes.settings.allow_fire,
+		enabled = livingslimes.settings.allow_attack and livingslimes.fire and livingslimes.settings.allow_fire,
 	},
 	dig = {
 		utility = "livingslimes:dig",

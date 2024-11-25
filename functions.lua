@@ -299,10 +299,10 @@ function livingslimes.register_slime(name,def)
 			local stack = {}
 			for i = 1, #def.behaviors do
 				local behavior = livingslimes.behaviors[def.behaviors[i]]
-				if behavior.enabled then
-					stack[#stack + 1] = behavior
-				elseif behavior.alternative then
-					behavior = livingslimes.behaviors[behavior.alternative]
+				while behavior and not behavior.enabled do
+					behavior = livingslimes.behaviors[behavior.alternative or ""]
+				end
+				if behavior then
 					stack[#stack + 1] = behavior
 				end
 			end
