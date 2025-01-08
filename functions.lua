@@ -126,7 +126,8 @@ function livingslimes.register_slime(name,def)
 			},
 			post_effect_color = "#cc00cc0f",
 			on_construct = function(pos)
-				poisonmap[minetest.hash_node_position(pos)] = minetest.add_particlespawner({
+				local hash = minetest.hash_node_position(pos)
+				poisonmap[hash] = minetest.add_particlespawner({
 					pos = {
 						min = pos:add(vector.new(-0.45,-0.05,-0.45)),
 						max = pos:add(vector.new(0.45,-0.4,0.45)),
@@ -152,11 +153,17 @@ function livingslimes.register_slime(name,def)
 					maxexptime = 2,
 					glow = 1,
 				})
+				if poisonmap[hash] == -1 then -- adding particles did not succeed
+					poisonmap[hash] = nil
+				end
 			end,
 			on_destruct = function(pos)
 				minetest.get_node_timer(pos):stop()
-				minetest.delete_particlespawner(poisonmap[minetest.hash_node_position(pos)])
-				poisonmap[minetest.hash_node_position(pos)] = nil
+				local hash = minetest.hash_node_position(pos)
+				if poisonmap[hash] then
+					minetest.delete_particlespawner(poisonmap[hash])
+					poisonmap[hash] = nil
+				end
 			end,
 			on_timer = function(pos)
 				minetest.remove_node(pos)
@@ -299,10 +306,10 @@ function livingslimes.register_slime(name,def)
 			local stack = {}
 			for i = 1, #def.behaviors do
 				local behavior = livingslimes.behaviors[def.behaviors[i]]
-				if behavior.enabled then
-					stack[#stack + 1] = behavior
-				elseif behavior.alternative then
-					behavior = livingslimes.behaviors[behavior.alternative]
+				while behavior and not behavior.enabled do
+					behavior = livingslimes.behaviors[behavior.alternative or ""]
+				end
+				if behavior then
 					stack[#stack + 1] = behavior
 				end
 			end
